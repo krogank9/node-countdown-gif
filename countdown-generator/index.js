@@ -189,6 +189,10 @@ module.exports = {
                 wrapText(ctx, "Countdown to Philly event!", this.halfWidth, this.halfHeight/4, this.width);
                 //ctx.fillText("Countdown to Philly event!", this.halfWidth, this.halfHeight/2); // title
                 
+				fontSize = Math.floor(this.width / 14) + 'px';
+				fontFamily = 'Courier New'; // monospace works slightly better
+				ctx.font = "bold "+[fontSize, fontFamily].join(' ');
+                
                 ctx.fillText("8/15/2019", this.halfWidth, this.halfHeight);
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
