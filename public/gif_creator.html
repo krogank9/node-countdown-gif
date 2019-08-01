@@ -22,8 +22,8 @@
 			<div class="thumbnail">
 				<img id="custom_gif" src="/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=250&height=100&name=serve3&title=this%20is%20test" alt="custom colours">
 				<div class="caption">
-					<h3>Custom dimensions</h3>
-					<p>Example setting a custom set of dimensions.</p>
+					<p>Link to image:<br></p>
+					<a id="img_link"href="https://dashboard.heroku.com/apps/countdown-timer-tester">https://dashboard.heroku.com/apps/countdown-timer-tester</a>
 				</div>
 			</div>
 		</div>
@@ -48,6 +48,7 @@
 			var date = $("#datepicker").val().split("/");
 			var fmt_date = (date[2]||0)+'-'+(date[0]||0)+'-'+(date[1]||0);
 			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title="+title);
+			$("#img_link").attr("href","/serve?time="+fmt_date+"T12:00&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title="+title);
 			//$("custom_gif").attr("src","/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title=this%20is%20test");
 		}
 		
