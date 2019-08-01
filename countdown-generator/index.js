@@ -153,6 +153,8 @@ module.exports = {
                 //ctx.fillText(string, this.halfWidth, this.halfHeight);
                 fillTextMultiLine(ctx, string, this.halfWidth, this.halfHeight);
                 
+                ctx.fillText("Countdown to philly", this.halfWidth, this.halfHeight/3);
+                
                 // add finalised frame to the gif
                 enc.addFrame(ctx);
                 
