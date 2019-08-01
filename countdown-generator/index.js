@@ -194,7 +194,9 @@ module.exports = {
 				fontFamily = 'Open Sans'; // monospace works slightly better
 				ctx.font = "bold "+[fontSize, fontFamily].join(' ');
                 
-                ctx.fillText(time, this.halfWidth, this.halfHeight*1.08);
+                let date = time.split("T")[0].split("-");
+                fmt_date = date[1]+'/'+date[2]+'/'+date[0]
+                ctx.fillText(, this.halfWidth, this.halfHeight*1.08);
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
 				fontFamily = 'Courier New'; // monospace works slightly better
