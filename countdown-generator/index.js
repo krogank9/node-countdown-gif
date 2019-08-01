@@ -15,10 +15,11 @@ module.exports = {
      * @param {string} color
      * @param {string} bg
      * @param {string} name
+     * @param {string} title
      * @param {number} frames
      * @param {requestCallback} cb - The callback that is run once complete.
      */
-    init: function(time, width=200, height=100, color='000000', bg='ffffff', name='default', title="Countdown", frames=30, cb){
+    init: function(time, width=200, height=100, color='000000', bg='ffffff', name='default', title='Countdown!', frames=30, cb){
         // Set some sensible upper / lower bounds
         this.width = this.clamp(width, 150, 500);
         this.height = this.clamp(height, 150, 500);
@@ -40,7 +41,7 @@ module.exports = {
         let timeResult = this.time(time);
         
         // start the gif encoder
-        this.encode(timeResult, time, title, cb);
+        this.encode(timeResult, cb);
     },
     /**
      * Limit a value between a min / max
@@ -58,7 +59,7 @@ module.exports = {
      * @param {string} timeString
      * @returns {string|Object} - return either the date passed string, or a valid moment duration object
      */
-    time: function (timeString, date, title) {
+    time: function (timeString) {
         // grab the current and target time
         let target = moment(timeString);
         let current = moment();
@@ -186,7 +187,7 @@ module.exports = {
                 ctx.fillStyle = this.textColor;
                 //ctx.fillText(string, this.halfWidth, this.halfHeight);
                 
-                wrapText(ctx, title, this.halfWidth, this.halfHeight/4, this.width);
+                wrapText(ctx, "Countdown to Philly event!", this.halfWidth, this.halfHeight/4, this.width);
                 //ctx.fillText("Countdown to Philly event!", this.halfWidth, this.halfHeight/2); // title
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
