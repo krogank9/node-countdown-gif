@@ -109,8 +109,6 @@ module.exports = {
         ctx.font = [fontSize, fontFamily].join(' ');
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        
-        registerFont(path: "AGENCYR.TTF", { family: "Agency" });
 
         // start encoding gif with following settings
         enc.start();
