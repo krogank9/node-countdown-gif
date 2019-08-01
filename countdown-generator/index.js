@@ -18,7 +18,7 @@ module.exports = {
      * @param {number} frames
      * @param {requestCallback} cb - The callback that is run once complete.
      */
-    init: function(time, width=200, height=200, color='ffffff', bg='000000', name='Countdown!', frames=30, cb){
+    init: function(time, width=200, height=200, color='ffffff', bg='000000', name='default', frames=30, cb){
         // Set some sensible upper / lower bounds
         this.width = this.clamp(width, 150, 500);
         this.height = this.clamp(height, 150, 500);
@@ -89,7 +89,7 @@ module.exports = {
             fs.mkdirSync(tmpDir);
         }
         
-        let filePath = tmpDir + 'countdown.gif';
+        let filePath = tmpDir + this.name + '.gif';
         
         // pipe the image to the filesystem to be written
         let imageStream = enc
@@ -150,8 +150,10 @@ module.exports = {
                 // paint text
                 ctx.font = '12px "Agency"';
                 ctx.fillStyle = this.textColor;
-                ctx.fillText(this.name, this.halfWidth, this.halfHeight/3);
+                //ctx.fillText(string, this.halfWidth, this.halfHeight);
                 fillTextMultiLine(ctx, string, this.halfWidth, this.halfHeight);
+                
+                ctx.fillText("Countdown to Philly event!", this.halfWidth, this.halfHeight/3);
                 
                 // add finalised frame to the gif
                 enc.addFrame(ctx);
