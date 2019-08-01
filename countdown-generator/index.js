@@ -158,8 +158,8 @@ module.exports = {
                 
                 ctx.fillText("Countdown to philly", this.halfWidth, this.halfHeight/2); // title
                 
-				let fontSize = Math.floor(this.width / 12) + 'px';
-				let fontFamily = 'Courier New'; // monospace works slightly better
+				fontSize = Math.floor(this.width / 12) + 'px';
+				fontFamily = 'Courier New'; // monospace works slightly better
 				ctx.font = [fontSize, fontFamily].join(' ');
                 
                 fillTextMultiLine(ctx, string, this.halfWidth, this.halfHeight*1.5); // clock
