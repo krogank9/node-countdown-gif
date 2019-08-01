@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src='spectrum.js'></script>
+		<link rel='stylesheet' href='spectrum.css' />
     <body>
 		
 		<div class="container">
@@ -17,6 +19,8 @@
 			<br>
 		<p>Title: <input type="text" id="titleinput" placeholder="Title"></p>
 		<p>Date: <input type="text" id="datepicker" placeholder="Select Date"></p>
+		<p>Background Color: <input type='text' id="bgcolor" /></p>
+		<p>Text Color: <input type='text' id="textcolor" /></p>
 		
 		<div class="col-sm-6 col-md-4">
 			<div class="thumbnail">
@@ -47,9 +51,11 @@
 			var title = encodeURIComponent($("#titleinput").val());
 			var date = $("#datepicker").val().split("/");
 			var fmt_date = (date[2]||0)+'-'+(date[0]||0)+'-'+(date[1]||0);
-			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title="+title);
-			$("#img_link").html("https://dashboard.heroku.com/apps/countdown-timer-tester"+"/serve?time="+fmt_date+"T12:00&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title="+title);
-			$("#img_link").attr("href","https://dashboard.heroku.com/apps/countdown-timer-tester"+"/serve?time="+fmt_date+"T12:00&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title="+title);
+			var bgcolor = $("#bgcolor").val();
+			var textcolor = $("#textcolor").val();
+			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
+			$("#img_link").html("https://dashboard.heroku.com/apps/countdown-timer-tester"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
+			$("#img_link").attr("href","https://dashboard.heroku.com/apps/countdown-timer-tester"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
 			//$("custom_gif").attr("src","/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title=this%20is%20test");
 		}
 		
@@ -60,6 +66,13 @@
 			});
 			$( "#titleinput" ).change(function(){
 				updateGif();
+			});
+			
+			$("#bgcolor").spectrum({
+				color: "#000"
+			});
+			$("#textcolor").spectrum({
+				color: "#fff"
 			});
 		});
 		</script>
