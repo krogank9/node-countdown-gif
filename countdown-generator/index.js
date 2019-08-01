@@ -195,8 +195,8 @@ module.exports = {
 				ctx.font = "bold "+[fontSize, fontFamily].join(' ');
                 
                 let date = time.split("T")[0].split("-");
-                //fmt_date = date[1]+'/'+date[2]+'/'+date[0];//
-                ctx.fillText(date, this.halfWidth, this.halfHeight*1.08);
+                let fmt_date = date[1]+'/'+date[2]+'/'+date[0];//
+                ctx.fillText(fmt_date, this.halfWidth, this.halfHeight*1.08);
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
 				fontFamily = 'Courier New'; // monospace works slightly better
