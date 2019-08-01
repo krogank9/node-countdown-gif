@@ -48,7 +48,7 @@
 		}
 		
 		function updateGif() {
-			var title = encodeURIComponent($("#titleinput").val());
+			var title = encodeURIComponent($("#titleinput").val()) || "Countdown!";
 			var date = $("#datepicker").val().split("/");
 			var fmt_date = (date[2]||0)+'-'+(date[0]||0)+'-'+(date[1]||0);
 			var bgcolor = $("#bgcolor").val()||"000000";
