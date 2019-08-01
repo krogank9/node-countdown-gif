@@ -179,8 +179,8 @@ module.exports = {
 				
 				// set font style
 				let fontSize = Math.floor(this.width / 12) + 'px';
-				let fontFamily = 'Courier New'; // monospace works slightly better
-				ctx.font = [fontSize, fontFamily].join(' ');
+				let fontFamily = 'Open Sans'; // monospace works slightly better
+				ctx.font = "bold "+[fontSize, fontFamily].join(' ');
                 
                 // paint text
                 ctx.fillStyle = this.textColor;
