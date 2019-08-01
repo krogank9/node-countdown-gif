@@ -109,6 +109,8 @@ module.exports = {
         ctx.font = [fontSize, fontFamily].join(' ');
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
+        
+        registerFont(path: "AGENCYR.TTF", { family: "Agency" });
 
         // start encoding gif with following settings
         enc.start();
@@ -132,13 +134,14 @@ module.exports = {
                 seconds = (seconds.toString().length == 1) ? '0' + seconds : seconds;
                 
                 // build the date string
-                let string = [days, 'd ', hours, 'h ', minutes, 'm ', seconds, 's'].join('');
+                let string = [days, ' days, ', hours, ' hours\n', minutes, ' minutes, ', seconds, ' seconds'].join('');
                 
                 // paint BG
                 ctx.fillStyle = this.bg;
                 ctx.fillRect(0, 0, this.width, this.height);
                 
                 // paint text
+                ctx.font = '12px "Agency"';
                 ctx.fillStyle = this.textColor;
                 ctx.fillText(string, this.halfWidth, this.halfHeight);
                 
