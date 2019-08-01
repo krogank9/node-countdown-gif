@@ -45,7 +45,7 @@
 		function updateGif() {
 			var title = encodeURIComponent($("#titleinput").val());
 			var date = $("#datepicker").val().split("/");
-			var fmt_date = date[2]+'-'+date[0]+'-'+date[1];
+			var fmt_date = (date[2]||0)+'-'+(date[0]||0)+'-'+(date[1]||0);
 			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title="+title);
 			//$("custom_gif").attr("src","/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title=this%20is%20test");
 		}
