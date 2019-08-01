@@ -146,14 +146,23 @@ module.exports = {
 						y += lineHeight;
 					}
 				}
+				
+				// set font style
+				let fontSize = Math.floor(this.width / 8) + 'px';
+				let fontFamily = 'Courier New'; // monospace works slightly better
+				ctx.font = [fontSize, fontFamily].join(' ');
                 
                 // paint text
-                ctx.font = '12px "Agency"';
                 ctx.fillStyle = this.textColor;
                 //ctx.fillText(string, this.halfWidth, this.halfHeight);
-                fillTextMultiLine(ctx, string, this.halfWidth, this.halfHeight);
                 
-                ctx.fillText("Countdown to philly", this.halfWidth, this.halfHeight/3);
+                ctx.fillText("Countdown to philly", this.halfWidth, this.halfHeight/2); // title
+                
+				let fontSize = Math.floor(this.width / 12) + 'px';
+				let fontFamily = 'Courier New'; // monospace works slightly better
+				ctx.font = [fontSize, fontFamily].join(' ');
+                
+                fillTextMultiLine(ctx, string, this.halfWidth, this.halfHeight*1.5); // clock
                 
                 // add finalised frame to the gif
                 enc.addFrame(ctx);
