@@ -195,7 +195,7 @@ module.exports = {
 				ctx.font = "bold "+[fontSize, fontFamily].join(' ');
                 
                 let date = time.split("T")[0].split("-");
-                fmt_date = date[1]+'/'+date[2]+'/'+date[0]
+                fmt_date = date[1]+'/'+date[2]+'/'+date[0];
                 ctx.fillText(, this.halfWidth, this.halfHeight*1.08);
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
