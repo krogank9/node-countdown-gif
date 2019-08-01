@@ -148,7 +148,7 @@ module.exports = {
 				}
 				
 				// set font style
-				let fontSize = Math.floor(this.width / 10) + 'px';
+				let fontSize = Math.floor(this.width / 12) + 'px';
 				let fontFamily = 'Courier New'; // monospace works slightly better
 				ctx.font = [fontSize, fontFamily].join(' ');
                 
@@ -158,7 +158,7 @@ module.exports = {
                 
                 ctx.fillText("Countdown to philly", this.halfWidth, this.halfHeight/2); // title
                 
-				fontSize = Math.floor(this.width / 12) + 'px';
+				fontSize = Math.floor(this.width / 14) + 'px';
 				fontFamily = 'Courier New'; // monospace works slightly better
 				ctx.font = [fontSize, fontFamily].join(' ');
                 
