@@ -149,7 +149,7 @@ module.exports = {
 				
 			  // http: //www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
 			  function wrapText(context, text, x, y, maxWidth, lineHeight) {
-				  lineHeight = lineHeight||(ctx.measureText("M").width * 1.5);
+				  lineHeight = lineHeight||(ctx.measureText("M").width * 1.65);
 				  var cars = text.split("\n");
 
 				  for (var ii = 0; ii < cars.length; ii++) {
