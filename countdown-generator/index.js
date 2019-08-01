@@ -18,10 +18,10 @@ module.exports = {
      * @param {number} frames
      * @param {requestCallback} cb - The callback that is run once complete.
      */
-    init: function(time, width=200, height=200, color='000000', bg='ffffff', name='default', frames=30, cb){
+    init: function(time, width=200, height=100, color='000000', bg='ffffff', name='default', frames=30, cb){
         // Set some sensible upper / lower bounds
         this.width = this.clamp(width, 150, 500);
-        this.height = this.clamp(height, 100, 500);
+        this.height = this.clamp(height, 150, 500);
         this.frames = this.clamp(frames, 1, 90);
         
         this.bg = '#' + bg;
