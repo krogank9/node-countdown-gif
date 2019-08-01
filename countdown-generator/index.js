@@ -41,7 +41,7 @@ module.exports = {
         let timeResult = this.time(time);
         
         // start the gif encoder
-        this.encode(timeResult, title, cb);
+        this.encode(timeResult, time, title, cb);
     },
     /**
      * Limit a value between a min / max
@@ -80,7 +80,7 @@ module.exports = {
      * @param {string|Object} timeResult - either the date passed string, or a valid moment duration object
      * @param {requestCallback} cb - the callback to be run once complete
      */
-    encode: function(timeResult, title, cb){
+    encode: function(timeResult, time, title, cb){
         let enc = this.encoder;
         let ctx = this.ctx;
         let tmpDir = process.cwd() + '/tmp/';
@@ -194,7 +194,7 @@ module.exports = {
 				fontFamily = 'Open Sans'; // monospace works slightly better
 				ctx.font = "bold "+[fontSize, fontFamily].join(' ');
                 
-                ctx.fillText("8/15/2019", this.halfWidth, this.halfHeight*1.08);
+                ctx.fillText(time, this.halfWidth, this.halfHeight*1.08);
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
 				fontFamily = 'Courier New'; // monospace works slightly better
