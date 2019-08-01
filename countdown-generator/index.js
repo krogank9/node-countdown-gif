@@ -147,6 +147,36 @@ module.exports = {
 					}
 				}
 				
+			  // http: //www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
+			  function wrapText(context, text, x, y, maxWidth, lineHeight) {
+				  lineHeight = lineHeight||(ctx.measureText("M").width * 1.5);
+				  var cars = text.split("\n");
+
+				  for (var ii = 0; ii < cars.length; ii++) {
+
+						var line = "";
+						var words = cars[ii].split(" ");
+
+						for (var n = 0; n < words.length; n++) {
+							 var testLine = line + words[n] + " ";
+							 var metrics = context.measureText(testLine);
+							 var testWidth = metrics.width;
+
+							 if (testWidth > maxWidth) {
+								  context.fillText(line, x, y);
+								  line = words[n] + " ";
+								  y += lineHeight;
+							 }
+							 else {
+								  line = testLine;
+							 }
+						}
+
+						context.fillText(line, x, y);
+						y += lineHeight;
+				  }
+			  }
+				
 				// set font style
 				let fontSize = Math.floor(this.width / 12) + 'px';
 				let fontFamily = 'Courier New'; // monospace works slightly better
@@ -156,7 +186,8 @@ module.exports = {
                 ctx.fillStyle = this.textColor;
                 //ctx.fillText(string, this.halfWidth, this.halfHeight);
                 
-                ctx.fillText("Countdown to philly", this.halfWidth, this.halfHeight/2); // title
+                wrapText(ctx, "Countdown to Philly event!", this.halfWidth, this.halfHeight/2);
+                //ctx.fillText("Countdown to Philly event!", this.halfWidth, this.halfHeight/2); // title
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
 				fontFamily = 'Courier New'; // monospace works slightly better
