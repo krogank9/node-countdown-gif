@@ -41,7 +41,7 @@ module.exports = {
         let timeResult = this.time(time);
         
         // start the gif encoder
-        this.encode(timeResult, cb);
+        this.encode(timeResult, title, cb);
     },
     /**
      * Limit a value between a min / max
@@ -80,7 +80,7 @@ module.exports = {
      * @param {string|Object} timeResult - either the date passed string, or a valid moment duration object
      * @param {requestCallback} cb - the callback to be run once complete
      */
-    encode: function(timeResult, cb){
+    encode: function(timeResult, title, cb){
         let enc = this.encoder;
         let ctx = this.ctx;
         let tmpDir = process.cwd() + '/tmp/';
@@ -187,7 +187,7 @@ module.exports = {
                 ctx.fillStyle = this.textColor;
                 //ctx.fillText(string, this.halfWidth, this.halfHeight);
                 
-                wrapText(ctx, "Countdown to Philly event!", this.halfWidth, this.halfHeight/4, this.width);
+                wrapText(ctx, title, this.halfWidth, this.halfHeight/4, this.width);
                 //ctx.fillText("Countdown to Philly event!", this.halfWidth, this.halfHeight/2); // title
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
