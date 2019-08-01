@@ -64,7 +64,10 @@
 			$( "#datepicker" ).change(function(){
 				updateGif();
 			});
-			$( "#titleinput" ).change(function(){
+			$( "#datepicker" ).on('input', function(){
+				updateGif();
+			});
+			$( "#titleinput" ).on('input', function(){
 				updateGif();
 			});
 			$( "#bgcolor" ).change(function(){
