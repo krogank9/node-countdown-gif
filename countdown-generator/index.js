@@ -137,11 +137,21 @@ module.exports = {
                 // paint BG
                 ctx.fillStyle = this.bg;
                 ctx.fillRect(0, 0, this.width, this.height);
+						
+				function fillTextMultiLine(ctx, text, x, y) {
+					var lineHeight = ctx.measureText("M").width * 1.2;
+					var lines = text.split("\n");
+					for (var i = 0; i < lines.length; ++i) {
+						ctx.fillText(lines[i], x, y);
+						y += lineHeight;
+					}
+				}
                 
                 // paint text
                 ctx.font = '12px "Agency"';
                 ctx.fillStyle = this.textColor;
-                ctx.fillText(string, this.halfWidth, this.halfHeight);
+                //ctx.fillText(string, this.halfWidth, this.halfHeight);
+                fillTextMultiLine(ctx, string, this.halfWidth, this.halfHeight);
                 
                 // add finalised frame to the gif
                 enc.addFrame(ctx);
