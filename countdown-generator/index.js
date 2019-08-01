@@ -186,7 +186,7 @@ module.exports = {
                 ctx.fillStyle = this.textColor;
                 //ctx.fillText(string, this.halfWidth, this.halfHeight);
                 
-                wrapText(ctx, "Countdown to Philly event!", this.halfWidth, this.halfHeight/2);
+                wrapText(ctx, "Countdown to Philly event!", this.halfWidth, this.halfHeight/2, this.width);
                 //ctx.fillText("Countdown to Philly event!", this.halfWidth, this.halfHeight/2); // title
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
