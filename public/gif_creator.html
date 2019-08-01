@@ -51,8 +51,8 @@
 			var title = encodeURIComponent($("#titleinput").val()) || "Countdown!";
 			var date = $("#datepicker").val().split("/");
 			var fmt_date = (date[2]||0)+'-'+(date[0]||0)+'-'+(date[1]||0);
-			var bgcolor = ($("#bgcolor").val()||"000000").split("#")[0];
-			var textcolor = ($("#textcolor").val()||"ffffff").split("#")[0];
+			var bgcolor = ($("#bgcolor").val()||"000000").split("#").pop();
+			var textcolor = ($("#textcolor").val()||"ffffff").split("#").pop();
 			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
 			$("#img_link").html("https://dashboard.heroku.com/apps/countdown-timer-tester"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
 			$("#img_link").attr("href","https://dashboard.heroku.com/apps/countdown-timer-tester"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
