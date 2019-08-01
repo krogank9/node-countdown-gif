@@ -139,7 +139,7 @@ module.exports = {
                 ctx.fillRect(0, 0, this.width, this.height);
 						
 				function fillTextMultiLine(ctx, text, x, y) {
-					var lineHeight = ctx.measureText("M").width * 1.2;
+					var lineHeight = ctx.measureText("M").width * 1.5;
 					var lines = text.split("\n");
 					for (var i = 0; i < lines.length; ++i) {
 						ctx.fillText(lines[i], x, y);
@@ -149,7 +149,7 @@ module.exports = {
 				
 			  // http: //www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
 			  function wrapText(context, text, x, y, maxWidth, lineHeight) {
-				  lineHeight = lineHeight||(ctx.measureText("M").width * 1.65);
+				  lineHeight = lineHeight||(ctx.measureText("M").width * 1.4);
 				  var cars = text.split("\n");
 
 				  for (var ii = 0; ii < cars.length; ii++) {
