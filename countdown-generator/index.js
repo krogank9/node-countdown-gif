@@ -133,7 +133,7 @@ module.exports = {
                 seconds = (seconds.toString().length == 1) ? '0' + seconds : seconds;
                 
                 // build the date string
-                let string = [days?days:"", days?' days, ':"", hours?hours:"", hours?' hours\n':"", minutes, ' minutes, ', seconds, ' seconds'].join('');
+                let string = [parseInt(days)>0?days:"", parseInt(days)?' days, ':"", parseInt(hours)>0?hours:"", parseInt(hours)>0?' hours\n':"", minutes, ' minutes, ', seconds, ' seconds'].join('');
                 
                 // paint BG
                 ctx.fillStyle = this.bg;
