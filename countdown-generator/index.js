@@ -193,7 +193,7 @@ module.exports = {
 				fontFamily = 'Open Sans'; // monospace works slightly better
 				ctx.font = "bold "+[fontSize, fontFamily].join(' ');
                 
-                ctx.fillText("8/15/2019", this.halfWidth, this.halfHeight*1.1);
+                ctx.fillText("8/15/2019", this.halfWidth, this.halfHeight*1.08);
                 
 				fontSize = Math.floor(this.width / 14) + 'px';
 				fontFamily = 'Courier New'; // monospace works slightly better
