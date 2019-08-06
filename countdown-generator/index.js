@@ -187,11 +187,11 @@ module.exports = {
 					
 					let fontSize = Math.floor(thiswidth / 10) + 'px';
 					let fontFamily = 'Open Sans'; // monospace works slightly better
-					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
+					ctx.font = ""+[fontSize, fontFamily].join(' ');
 					
 					ctx.fillText(""+num, x+w/2, y+h/4);
 					
-					fontSize = Math.floor(thiswidth / 26) + 'px';
+					fontSize = Math.floor(thiswidth / 30) + 'px';
 					fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
 					
