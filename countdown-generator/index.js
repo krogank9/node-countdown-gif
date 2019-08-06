@@ -19,7 +19,7 @@ module.exports = {
      * @param {number} frames
      * @param {requestCallback} cb - The callback that is run once complete.
      */
-    init: function(time, width=200, height=100, color='000000', bg='ffffff', name='default', title='Countdown!', frames=30, cb){
+    init: function(time, width=200, height=80, color='000000', bg='ffffff', name='default', title='Countdown!', frames=30, cb){
         // Set some sensible upper / lower bounds
         this.width = this.clamp(width, 150, 500);
         this.height = this.clamp(height, 150, 500);
@@ -33,7 +33,7 @@ module.exports = {
         this.halfWidth = Number(this.width / 2);
         this.halfHeight = Number(this.height / 2);
         
-        this.encoder = new GIFEncoder(this.width, 80);
+        this.encoder = new GIFEncoder(this.width, this.height);
         this.canvas = new Canvas(this.width, this.height);
         this.ctx = this.canvas.getContext('2d');
         
@@ -116,6 +116,9 @@ module.exports = {
         enc.setRepeat(0);
         enc.setDelay(1000);
         enc.setQuality(10);
+		
+		enc.setTransparent(0xFF00FF);
+		enc.writeHeader();
 
         // if we have a moment duration object
         if(typeof timeResult === 'object'){
@@ -249,7 +252,6 @@ module.exports = {
             // Text
             ctx.fillStyle = this.textColor;
             ctx.fillText(timeResult, this.halfWidth, this.halfHeight);
-			enc.setTransparent(0xFF00FF);
             enc.addFrame(ctx);
         }
         
