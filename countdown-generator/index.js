@@ -34,7 +34,7 @@ module.exports = {
         this.halfHeight = Number(this.height / 2);
         
         this.encoder = new GIFEncoder(this.width, this.height);
-        this.canvas = new Canvas(this.width, this.height);
+        this.canvas = new Canvas(this.width, 80);
         this.ctx = this.canvas.getContext('2d');
         
         // calculate the time difference (if any)
