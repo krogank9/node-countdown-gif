@@ -21,8 +21,8 @@ module.exports = {
      */
     init: function(time, width=200, height=80, color='000000', bg='ffffff', name='default', title='Countdown!', frames=30, cb){
         // Set some sensible upper / lower bounds
-        //this.width = this.clamp(width, 150, 500);
-        //this.height = this.clamp(height, 150, 500);
+        this.width = width;//this.clamp(width, 150, 500);
+        this.height = height;//this.clamp(height, 150, 500);
         this.frames = this.clamp(frames, 1, 90);
         
         this.bg = '#' + bg;
@@ -34,7 +34,7 @@ module.exports = {
         this.halfHeight = Number(this.height / 2);
         
         this.encoder = new GIFEncoder(this.width, this.height);
-        this.canvas = new Canvas(this.width, this.height);
+        this.canvas = new Canvas(this.width, 80);
         this.ctx = this.canvas.getContext('2d');
         
         // calculate the time difference (if any)
