@@ -193,7 +193,7 @@ module.exports = {
 					
 					fontSize = Math.floor(thiswidth / 30) + 'px';
 					fontFamily = 'Open Sans'; // monospace works slightly better
-					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
+					ctx.font = ""+[fontSize, fontFamily].join(' ');
 					
 					ctx.fillText(""+text, x+w/2, y+h*0.75);
 				}
