@@ -84,6 +84,9 @@ module.exports = {
         let enc = this.encoder;
         let ctx = this.ctx;
         let tmpDir = process.cwd() + '/tmp/';
+		
+		enc.setTransparent(0xFF00FF);
+		ctx.fillRect(0,0,this.width,this.height)
 
         // create the tmp directory if it doesn't exist
         if (!fs.existsSync(tmpDir)){
