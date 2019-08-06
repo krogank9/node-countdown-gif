@@ -191,7 +191,7 @@ module.exports = {
 					
 					ctx.fillText(""+num, x+w/2, y+h/4);
 					
-					fontSize = Math.floor(thiswidth / 24) + 'px';
+					fontSize = Math.floor(thiswidth / 26) + 'px';
 					fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
 					
