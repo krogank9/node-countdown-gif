@@ -25,6 +25,7 @@ module.exports = {
         this.height = this.clamp(height, 80, 500);
         this.frames = this.clamp(frames, 1, 90);
 		
+		color="111111";
 		if(color == "000000" || color == "000") {
 			color = "111111"; // make sure not fully black, because used for transparency
 		}
