@@ -178,10 +178,10 @@ module.exports = {
 				  }
 			  }
 			  
-				function drawBox(ctx, bg,fg, num, text, x,y,w,h) {
+				function drawBox(ctx, bg,textColor, num, text, x,y,w,h) {
 					ctx.fillStyle = bg;
 					ctx.fillRect(x, y, w, h);
-					ctx.fillStyle = fg;
+					ctx.fillStyle = textColor;
 					
 					let fontSize = Math.floor(this.width / 10) + 'px';
 					let fontFamily = 'Open Sans'; // monospace works slightly better
@@ -195,6 +195,13 @@ module.exports = {
 					
 					ctx.fillText(num, x+w/2, y+h*0.75);
 				}
+				
+				drawBox(ctx, this.bg, this.textColor, days, "DAYS", 0,0,97,80);
+				drawBox(ctx, this.bg, this.textColor, hours, "HOURS", 97+15,0,97,80);
+				drawBox(ctx, this.bg, this.textColor, minutes, "MINUTES", (97+15)*2,0,97,80);
+				drawBox(ctx, this.bg, this.textColor, seconds, "SECONDS", (97+15)*3,0,97,80);
+				
+				/*
 				
 				// set font style
 				let fontSize = Math.floor(this.width / 12) + 'px';
@@ -221,6 +228,8 @@ module.exports = {
 				ctx.font = [fontSize, fontFamily].join(' ');
                 
                 fillTextMultiLine(ctx, string, this.halfWidth, this.halfHeight*1.5); // clock
+				
+				*/
                 
                 // add finalised frame to the gif
                 enc.addFrame(ctx);
