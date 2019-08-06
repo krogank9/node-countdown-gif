@@ -86,6 +86,7 @@ module.exports = {
         let tmpDir = process.cwd() + '/tmp/';
 		
 		enc.setTransparent(0xFF00FF);
+		ctx.fillStyle = 0xFF00FF;
 		ctx.fillRect(0,0,this.width,this.height)
 
         // create the tmp directory if it doesn't exist
