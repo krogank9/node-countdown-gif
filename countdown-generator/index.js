@@ -27,10 +27,10 @@ module.exports = {
 		
 		color="000000";
 		if(color == "000000" || color == "000") {
-			color = "#111111"; // make sure not fully black, because used for transparency
+			color = "111111"; // make sure not fully black, because used for transparency
 		}
 		if(bg == "000000" || bg == "000") {
-			bg = "#111111";
+			bg = "111111";
 		}
         
         this.bg = '#' + bg;
