@@ -189,13 +189,13 @@ module.exports = {
 					let fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = ""+[fontSize, fontFamily].join(' ');
 					
-					ctx.fillText(""+num, x+w/2, y+h/3);
+					ctx.fillText(""+num, x+w/2, y+h/2.9);
 					
 					fontSize = Math.floor(thiswidth / 28) + 'px';
 					fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = ""+[fontSize, fontFamily].join(' ');
 					
-					ctx.fillText(""+text, x+w/2, y+h*0.75);
+					ctx.fillText(""+text, x+w/2, y+h*0.78);
 				}
 				
 				drawBox(ctx, this.bg, this.textColor, days, "DAYS", 0,0,97,80);
