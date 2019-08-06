@@ -24,7 +24,7 @@
 		
 		<div class="col-sm-6 col-md-4">
 			<div class="thumbnail">
-				<img id="custom_gif" src="/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=250&height=100&name=serve3&title=this%20is%20test" alt="custom colours">
+				<img id="custom_gif" src="/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=432&height=80&name=serve3&title=this%20is%20test" alt="custom colours">
 				<div class="caption">
 					<p>Copy this URL and set it to image URL in constant contact:<br></p>
 					<a id="img_link"href="https://countdown-timer-tester.herokuapp.com">https://dashboard.heroku.com/apps/countdown-timer-tester</a>
@@ -53,9 +53,9 @@
 			var fmt_date = (date[2]||0)+'-'+(date[0]||0)+'-'+(date[1]||0);
 			var bgcolor = ($("#bgcolor").val()||"000000").split("#").pop();
 			var textcolor = ($("#textcolor").val()||"ffffff").split("#").pop();
-			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
-			$("#img_link").html("https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
-			$("#img_link").attr("href","https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=250&height=100&name=serve&title="+title);
+			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve&title="+title);
+			$("#img_link").html("https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve&title="+title);
+			$("#img_link").attr("href","https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve&title="+title);
 			//$("custom_gif").attr("src","/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=250&height=100&name=serve&title=this%20is%20test");
 		}
 		
