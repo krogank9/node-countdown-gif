@@ -52,9 +52,9 @@
 			var fmt_date = (date[2]||0)+'-'+(date[0]||0)+'-'+(date[1]||0);
 			var bgcolor = ($("#bgcolor").val()||"000000").split("#").pop();
 			var textcolor = ($("#textcolor").val()||"ffffff").split("#").pop();
-			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve&title="+title);
-			$("#img_link").html("https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve&title="+title);
-			$("#img_link").attr("href","https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve&title="+title);
+			$("#custom_gif").attr("src","/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve");
+			$("#img_link").html("https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve");
+			$("#img_link").attr("href","https://countdown-timer-tester.herokuapp.com"+"/serve?time="+fmt_date+"T12:00&bg="+bgcolor+"&color="+textcolor+"&width=432&height=80&name=serve");
 			//$("custom_gif").attr("src","/serve?time=2019-09-24T20:35&bg=FFFFFF&color=85144B&width=432&height=80&name=serve&title=this%20is%20test");
 		}1
 		
