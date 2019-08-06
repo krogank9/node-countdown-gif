@@ -115,7 +115,7 @@ module.exports = {
         enc.start();
         enc.setRepeat(0);
         enc.setDelay(1000);
-        enc.setQuality(10);
+        enc.setQuality(100);
 		
 		enc.setTransparent(0xFF00FF);
 
