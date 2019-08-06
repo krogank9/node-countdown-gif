@@ -33,7 +33,7 @@ module.exports = {
         this.halfWidth = Number(this.width / 2);
         this.halfHeight = Number(this.height / 2);
         
-        this.encoder = new GIFEncoder(this.width, this.height);
+        this.encoder = new GIFEncoder(this.width, 80);
         this.canvas = new Canvas(this.width, this.height);
         this.ctx = this.canvas.getContext('2d');
         
