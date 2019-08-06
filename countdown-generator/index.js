@@ -178,18 +178,20 @@ module.exports = {
 				  }
 			  }
 			  
+			  let thiswidth = this.width;
+			  
 				function drawBox(ctx, bg,textColor, num, text, x,y,w,h) {
 					ctx.fillStyle = bg;
 					ctx.fillRect(x, y, w, h);
 					ctx.fillStyle = textColor;
 					
-					let fontSize = Math.floor(this.width / 10) + 'px';
+					let fontSize = Math.floor(thiswidth / 10) + 'px';
 					let fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
 					
 					ctx.fillText(""+num, x+w/2, y+h/4);
 					
-					fontSize = Math.floor(this.width / 16) + 'px';
+					fontSize = Math.floor(thiswidth / 16) + 'px';
 					fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
 					
