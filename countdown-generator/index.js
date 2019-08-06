@@ -118,7 +118,6 @@ module.exports = {
         enc.setQuality(10);
 		
 		enc.setTransparent(0xFF00FF);
-		enc.writeHeader();
 
         // if we have a moment duration object
         if(typeof timeResult === 'object'){
