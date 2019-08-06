@@ -137,7 +137,7 @@ module.exports = {
                 
                 // paint BG
                 ctx.fillStyle = this.bg;
-                ctx.fillRect(0, 0, this.width, this.height);
+                //ctx.fillRect(0, 0, this.width, this.height);
 						
 				function fillTextMultiLine(ctx, text, x, y) {
 					var lineHeight = ctx.measureText("M").width * 1.5;
@@ -187,19 +187,19 @@ module.exports = {
 					let fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
 					
-					ctx.fillText(num, x+w/2, y+h/4);
+					ctx.fillText(""+num, x+w/2, y+h/4);
 					
 					fontSize = Math.floor(this.width / 16) + 'px';
 					fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
 					
-					ctx.fillText(num, x+w/2, y+h*0.75);
+					ctx.fillText(""+text, x+w/2, y+h*0.75);
 				}
 				
-				//drawBox(ctx, this.bg, this.textColor, days, "DAYS", 0,0,97,80);
-				//drawBox(ctx, this.bg, this.textColor, hours, "HOURS", 97+15,0,97,80);
-				//drawBox(ctx, this.bg, this.textColor, minutes, "MINUTES", (97+15)*2,0,97,80);
-				//drawBox(ctx, this.bg, this.textColor, seconds, "SECONDS", (97+15)*3,0,97,80);
+				drawBox(ctx, this.bg, this.textColor, days, "DAYS", 0,0,97,80);
+				drawBox(ctx, this.bg, this.textColor, hours, "HOURS", 97+15,0,97,80);
+				drawBox(ctx, this.bg, this.textColor, minutes, "MINUTES", (97+15)*2,0,97,80);
+				drawBox(ctx, this.bg, this.textColor, seconds, "SECONDS", (97+15)*3,0,97,80);
 				
 				/*
 				
