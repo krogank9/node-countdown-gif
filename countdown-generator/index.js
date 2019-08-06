@@ -26,7 +26,6 @@ module.exports = {
         this.frames = this.clamp(frames, 1, 90);
         
         this.bg = '#' + bg;
-        //this.bg = '#ffffff00';
         this.textColor = '#' + color;
         this.name = name;
         
@@ -149,36 +148,36 @@ module.exports = {
 					}
 				}
 				
-				// http: //www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
-				function wrapText(context, text, x, y, maxWidth, lineHeight) {
-					lineHeight = lineHeight||(ctx.measureText("M").width * 1.4);
-					var cars = text.split("\n");
+			  // http: //www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
+			  function wrapText(context, text, x, y, maxWidth, lineHeight) {
+				  lineHeight = lineHeight||(ctx.measureText("M").width * 1.4);
+				  var cars = text.split("\n");
 
-					for (var ii = 0; ii < cars.length; ii++) {
+				  for (var ii = 0; ii < cars.length; ii++) {
 
 						var line = "";
 						var words = cars[ii].split(" ");
 
 						for (var n = 0; n < words.length; n++) {
-							var testLine = line + words[n] + " ";
-							var metrics = context.measureText(testLine);
-							var testWidth = metrics.width;
+							 var testLine = line + words[n] + " ";
+							 var metrics = context.measureText(testLine);
+							 var testWidth = metrics.width;
 
-							if (testWidth > maxWidth) {
-								context.fillText(line, x, y);
-								line = words[n] + " ";
-								y += lineHeight;
-							}
-							else {
-								line = testLine;
-							}
+							 if (testWidth > maxWidth) {
+								  context.fillText(line, x, y);
+								  line = words[n] + " ";
+								  y += lineHeight;
+							 }
+							 else {
+								  line = testLine;
+							 }
 						}
 
 						context.fillText(line, x, y);
 						y += lineHeight;
-					}
-				}
-				
+				  }
+			  }
+			  
 				function drawBox(ctx, bg,fg, num, text, x,y,w,h) {
 					ctx.fillStyle = bg;
 					ctx.fillRect(x, y, w, h);
@@ -190,8 +189,8 @@ module.exports = {
 					
 					ctx.fillText(num, x+w/2, y+h/4);
 					
-					let fontSize = Math.floor(this.width / 16) + 'px';
-					let fontFamily = 'Open Sans'; // monospace works slightly better
+					fontSize = Math.floor(this.width / 16) + 'px';
+					fontFamily = 'Open Sans'; // monospace works slightly better
 					ctx.font = "bold "+[fontSize, fontFamily].join(' ');
 					
 					ctx.fillText(num, x+w/2, y+h*0.75);
