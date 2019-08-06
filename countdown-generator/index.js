@@ -145,8 +145,8 @@ module.exports = {
                 let string = [parseInt(days)>0?days:"", parseInt(days)?' days, ':"", parseInt(hours)>0?hours:"", parseInt(hours)>0?' hours\n':"", minutes, ' minutes, ', seconds, ' seconds'].join('');
                 
                 // paint BG
-                ctx.fillStyle = "#000000";
-                ctx.fillRect(0, 0, this.width, this.height);
+                //ctx.fillStyle = "#000000";
+                //ctx.fillRect(0, 0, this.width, this.height);
 						
 				function fillTextMultiLine(ctx, text, x, y) {
 					var lineHeight = ctx.measureText("M").width * 1.5;
