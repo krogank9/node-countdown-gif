@@ -84,8 +84,6 @@ module.exports = {
         let enc = this.encoder;
         let ctx = this.ctx;
         let tmpDir = process.cwd() + '/tmp/';
-		
-		enc.setTransparent(0xFF00FF);
 
         // create the tmp directory if it doesn't exist
         if (!fs.existsSync(tmpDir)){
@@ -117,7 +115,7 @@ module.exports = {
         enc.start();
         enc.setRepeat(0);
         enc.setDelay(1000);
-        enc.setQuality(30);
+        enc.setQuality(10);
 
         // if we have a moment duration object
         if(typeof timeResult === 'object'){
@@ -251,6 +249,7 @@ module.exports = {
             // Text
             ctx.fillStyle = this.textColor;
             ctx.fillText(timeResult, this.halfWidth, this.halfHeight);
+			enc.setTransparent(0xFF00FF);
             enc.addFrame(ctx);
         }
         
