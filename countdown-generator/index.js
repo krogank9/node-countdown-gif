@@ -117,7 +117,7 @@ module.exports = {
         enc.start();
         enc.setRepeat(0);
         enc.setDelay(1000);
-        enc.setQuality(10);
+        enc.setQuality(30);
 
         // if we have a moment duration object
         if(typeof timeResult === 'object'){
